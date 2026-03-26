@@ -21,7 +21,7 @@ Route::get('/dashboard/pickups-by-period', [DashboardController::class, 'getPick
 Route::get('/dashboard/pickups-by-floor', [DashboardController::class, 'getPickupsByFloor']);
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 // Auth routes
@@ -131,3 +131,4 @@ Route::middleware('auth')->group(function () {
     });
 
 });
+
