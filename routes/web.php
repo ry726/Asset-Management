@@ -16,12 +16,17 @@ use App\Http\Controllers\MasterDataController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\PersonController;
 
+
+Route::get('/', function () {
+    return redirect('/login');
+});
+
 Route::get('/dashboard/pickups-by-category', [DashboardController::class, 'getPickupsByCategory']);
 Route::get('/dashboard/pickups-by-period', [DashboardController::class, 'getPickupsByPeriod']);
 Route::get('/dashboard/pickups-by-floor', [DashboardController::class, 'getPickupsByFloor']);
 
-Route::get('/', function () {
-    return redirect('/login');
+Route::get('auth', function () {
+    return view('login');
 });
 
 // Auth routes
@@ -131,4 +136,3 @@ Route::middleware('auth')->group(function () {
     });
 
 });
-
